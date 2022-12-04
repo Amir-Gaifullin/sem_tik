@@ -1,13 +1,14 @@
 # Подготовить таблицу вероятностей каждого символа
-final_result_code = {}
 def findTheCharFrequency(text):
     result = dict()
     with open(text,'r') as f:
-        result = dict()
-        with open(text,'r') as f:
-            lines = f.readlines()
-            ver = [float(i) for i in list(lines[1].split())]
-            result = dict(zip(lines[0], ver))
+        lines = f.readlines()
+        ver = [float(i) for i in list(lines[1].split())]
+        result = (dict(zip(lines[0], ver)))
+        global word
+        global final_result_code
+        final_result_code = {}
+        word = lines[2].strip()
     return result
 
 
@@ -58,4 +59,9 @@ if __name__=='__main__':
     result = findTheCharFrequency(text)
     tree = HuffmanTree(result)
     tree.get_code()
+    code_message = ""
+    for i in word:
+        code_message += final_result_code[i]
+
     print(final_result_code)
+    print(code_message)

@@ -16,6 +16,7 @@ def read_code(text):
         lines = f.readlines()
         code_input = [int(i) for i in list(lines[0].split(", "))]
         dictianory = list(lines[1].strip())
+        dictianory.append(" ")
         index = int(lines[2])
 
         result = (code_input, dictianory, index)
