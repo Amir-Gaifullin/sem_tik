@@ -54,7 +54,7 @@ class HuffmanTree(object):
         self.Hu_generate(self.root, 0)
 
 if __name__=='__main__':
-    text = r'code_input.txt'
+    text = r'code_hafmann_input.txt'
     result = findTheCharFrequency(text)
     tree = HuffmanTree(result)
     tree.get_code()
